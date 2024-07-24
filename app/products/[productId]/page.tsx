@@ -1,6 +1,6 @@
 import SingleProduct from '@/components/products/SingleProduct';
 import { baseFetch } from '@/lib/helper/api';
-import { redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 
 export async function generateMetadata({
 	params,
@@ -30,7 +30,7 @@ const getData = async (id: string) => {
 		return data;
 	} catch (error: any) {
 		if (error?.message === 'Product not Found') {
-			redirect('/404');
+			notFound();
 		}
 	}
 };
