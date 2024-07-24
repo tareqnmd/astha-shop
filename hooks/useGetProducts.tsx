@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 export const useGetProducts = (products: ProductListType) => {
 	const [productList, setProductList] = useState<ProductListType>([]);
+	const [loading, setLoading] = useState(true);
 	const { cartProducts = {} } = useAppSelector((state) => state.cart);
 	const { productSearch = '' } = useAppSelector((state) => state.product);
 
@@ -29,8 +30,9 @@ export const useGetProducts = (products: ProductListType) => {
 						String(product?.price)?.includes(productSearch)
 				)
 			);
+			setLoading(false);
 		}
 	}, [cartProducts, products, productSearch]);
 
-	return productList;
+	return { productList, loading };
 };

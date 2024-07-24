@@ -3,9 +3,10 @@ import { useGetProducts } from '@/hooks/useGetProducts';
 import { ProductListType } from '@/types/product';
 import ProductCard from './ProductCard';
 import ProductSkeleton from './ProductSkeleton';
+import ProductsNotFound from './ProductsNotFound';
 
 const ProductList = ({ products }: { products: ProductListType }) => {
-	const productList = useGetProducts(products);
+	const { productList, loading } = useGetProducts(products);
 	return (
 		<div className="product-list grid md:grid-cols-2 lg:grid-cols-3 gap-4">
 			{productList?.length > 0 ? (
@@ -15,7 +16,7 @@ const ProductList = ({ products }: { products: ProductListType }) => {
 						key={index}
 					/>
 				))
-			) : (
+			) : loading ? (
 				<>
 					<ProductSkeleton />
 					<ProductSkeleton />
@@ -24,6 +25,8 @@ const ProductList = ({ products }: { products: ProductListType }) => {
 					<ProductSkeleton />
 					<ProductSkeleton />
 				</>
+			) : (
+				<ProductsNotFound />
 			)}
 		</div>
 	);
