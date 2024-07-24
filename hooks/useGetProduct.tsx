@@ -7,8 +7,11 @@ export const useGetProduct = (product: ProductType) => {
 	const { cartProducts = {} } = useAppSelector((state) => state.cart);
 
 	useEffect(() => {
-		if (product?.productId && Object.keys(cartProducts)?.length > 0) {
-			const foundQuantityInCart = cartProducts[product.productId];
+		if (product?.productId) {
+			const foundQuantityInCart =
+				Object.keys(cartProducts)?.length > 0
+					? cartProducts[product.productId]
+					: 0;
 			setProductData({
 				...product,
 				availableQuantity:

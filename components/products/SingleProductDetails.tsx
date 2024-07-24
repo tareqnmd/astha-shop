@@ -6,6 +6,7 @@ import ProductInfo from './ProductInfo';
 
 const SingleProductDetails = ({ product }: { product: ProductType }) => {
 	const productData = useGetProduct(product);
+	console.log('productData', productData);
 	return productData ? (
 		<div className="flex flex-col gap-2">
 			<ProductInfo product={productData} />
