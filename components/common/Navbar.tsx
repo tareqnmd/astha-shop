@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import Cart from './Cart';
+import CartIcon from './CartIcon';
 const Navbar = () => {
 	return (
 		<nav className="bg-secondary">
@@ -11,7 +11,7 @@ const Navbar = () => {
 				>
 					Shop
 				</Link>
-				<Cart />
+				<CartIcon />
 			</div>
 		</nav>
 	);

@@ -1,3 +1,5 @@
+import Cart from '@/components/cart/Cart';
+import Products from '@/components/products/Products';
 import { baseFetch } from '@/lib/helper/api';
 async function getData() {
 	try {
@@ -14,8 +16,13 @@ async function getData() {
 
 const Page = async () => {
 	const products = await getData();
-	console.log('products', products);
-	return <></>;
+	return (
+		<section className="grid grid-cols-1 sm:grid-cols-[2fr_auto_auto] gap-4 min-h-full">
+			<Products products={products} />
+			<div className="divider border-l hidden sm:block"></div>
+			<Cart products={products} />
+		</section>
+	);
 };
 
 export default Page;

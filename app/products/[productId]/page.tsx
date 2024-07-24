@@ -1,3 +1,4 @@
+import SingleProduct from '@/components/products/SingleProduct';
 import { baseFetch } from '@/lib/helper/api';
 import { redirect } from 'next/navigation';
 
@@ -41,7 +42,7 @@ const Page = async ({
 	};
 }) => {
 	const product = await getData(params.productId);
-	return <></>;
+	return product ? <SingleProduct product={product} /> : null;
 };
 
 export default Page;

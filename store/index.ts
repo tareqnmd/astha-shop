@@ -2,6 +2,8 @@ import apiSlice from '@/store/features/api';
 import storage from '@/store/storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
+import cartSlice from './features/cart/slice';
+import productSlice from './features/product/slice';
 
 const persistConfig = {
 	key: 'shop',
@@ -12,6 +14,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
 	[apiSlice.reducerPath]: apiSlice.reducer,
+	[cartSlice.name]: cartSlice.reducer,
+	[productSlice.name]: productSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -16,5 +16,6 @@ export const productGenerate = (product: DefaultProductType) => {
 		discountedPrice:
 			(product?.ProductPrice?.OldPrice ?? 0) -
 			(product?.ProductPrice?.Price ?? 0),
+		availableQuantity: 10,
 	};
 };
