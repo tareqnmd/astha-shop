@@ -1,5 +1,6 @@
 import SingleProduct from '@/components/products/SingleProduct';
 import { baseFetch } from '@/lib/helper/api';
+import { ProductType } from '@/types/product';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata({
@@ -15,6 +16,14 @@ export async function generateMetadata({
 			images: data?.productImage ?? '',
 		},
 	};
+}
+
+export async function generateStaticParams() {
+	const { data = [] } = await baseFetch('api/products');
+	const staticProducts = data.slice(0, 5).map((prod: ProductType) => ({
+		productId: prod.productId,
+	}));
+	return staticProducts;
 }
 
 const getData = async (id: string) => {
