@@ -11,12 +11,12 @@ const ProductCard = ({ product }: { product: ProductType }) => {
 	return (
 		<div
 			className={cn(
-				'shadow-md rounded flex flex-col overflow-hidden border hover:shadow-lg',
+				'shadow-md rounded grid overflow-hidden border hover:shadow-lg',
 				availableQuantity > 0 ? 'border-secondary' : 'border-danger'
 			)}
 		>
 			<Link
-				className="h-[200px]"
+				className="h-[200px] overflow-hidden"
 				href={`products/${productId}`}
 			>
 				<ProductImage

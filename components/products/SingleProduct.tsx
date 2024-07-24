@@ -6,7 +6,7 @@ const SingleProduct = ({ product }: { product: ProductType }) => {
 	const { productName, productImage } = product;
 	return (
 		<div className="flex flex-col gap-4">
-			<div className="h-[50dvh]">
+			<div className="h-[50dvh] overflow-hidden">
 				<ProductImage
 					alt={productName}
 					src={productImage}

@@ -12,7 +12,7 @@ const ProductImage = ({ src, alt }: { alt: string; src: string }) => {
 				width: '100%',
 				height: '100%',
 			}}
-			className="object-contain transition-opacity opacity-0 duration-[0.5s]"
+			className="object-contain transition-all opacity-0 duration-[0.5s] hover:scale-110"
 			onLoadingComplete={(img) => img.classList.remove('opacity-0')}
 			alt={alt}
 		/>
