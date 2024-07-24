@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 import { ProductType } from '@/types/product';
-import Image from 'next/image';
 import Link from 'next/link';
 import ProductAddToCart from './ProductAddToCart';
+import ProductImage from './ProductImage';
 import ProductInfo from './ProductInfo';
 
 const ProductCard = ({ product }: { product: ProductType }) => {
@@ -15,13 +15,13 @@ const ProductCard = ({ product }: { product: ProductType }) => {
 				availableQuantity > 0 ? 'border-secondary' : 'border-danger'
 			)}
 		>
-			<Link href={`products/${productId}`}>
-				<Image
+			<Link
+				className="h-[200px]"
+				href={`products/${productId}`}
+			>
+				<ProductImage
 					src={productImage}
 					alt={productName}
-					width={200}
-					height={200}
-					className="w-full max-h-[200px] object-cover"
 				/>
 			</Link>
 			<Link
