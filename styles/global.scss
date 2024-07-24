@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// add global styles here
+body {
+	@apply bg-primary text-textPrimary;
+	scroll-behavior: smooth;
+}
+
+main.shop {
+	@apply text-textPrimary min-h-dvh grid grid-rows-[auto_1fr_auto];
+}
+
+.word-break-word {
+	word-break: break-word;
+}
