@@ -1,20 +1,21 @@
-'use client';
-import { useGetProduct } from '@/hooks/useGetProduct';
 import { ProductType } from '@/types/product';
-import ProductAddToCart from './ProductAddToCart';
-import ProductInfo from './ProductInfo';
+import Image from 'next/image';
+import SingleProductDetails from './SingleProductDetails';
 
 const SingleProduct = ({ product }: { product: ProductType }) => {
-	const productData = useGetProduct(product);
-	return productData ? (
-		<div className="flex flex-col gap-2">
-			<ProductInfo product={productData} />
-			<ProductAddToCart
-				extraClass="max-w-[200px] rounded-lg bg-gray-600 text-white"
-				product={productData}
+	const { productName, productImage } = product;
+	return (
+		<div className="flex flex-col gap-4">
+			<Image
+				src={productImage}
+				alt={productName}
+				width={200}
+				height={200}
+				className="w-full h-[300px] object-contain rounded bg-secondary"
 			/>
+			<SingleProductDetails product={product} />
 		</div>
-	) : null;
+	);
 };
 
 export default SingleProduct;
