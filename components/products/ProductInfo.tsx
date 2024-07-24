@@ -15,7 +15,13 @@ const ProductInfo = ({ product }: { product: ProductType }) => {
 			>
 				In Stock <strong>{product?.availableQuantity}</strong>
 			</span>
-			<strong>{moneyFormat(product?.price)}</strong>
+			<div className="flex flex-wrap items-center gap-1">
+				<strong>{moneyFormat(product?.price)}</strong>
+				<s className="text-xs mx-1">{moneyFormat(product?.previousPrice)}</s>
+				<span className="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded flex gap-1">
+					SAVE {moneyFormat(product?.discountedPrice)}
+				</span>
+			</div>
 		</>
 	);
 };
