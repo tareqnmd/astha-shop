@@ -14,6 +14,7 @@ async function getData() {
 
 const Page = async () => {
 	const products = await getData();
+	console.log('products', products);
 	return <></>;
 };
 
