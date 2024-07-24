@@ -21,7 +21,7 @@ const getData = async (id: string) => {
 	try {
 		const { data } = await baseFetch(`api/products/${id}`, {
 			next: {
-				revalidate: 40000,
+				revalidate: 40,
 			},
 		});
 		if (!data) {
