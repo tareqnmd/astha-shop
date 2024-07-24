@@ -21,10 +21,12 @@ export const useGetProducts = (products: ProductListType) => {
 				}
 			});
 			setProductList(
-				updateProducts.filter((product) =>
-					product.productName
-						.toLowerCase()
-						.includes(productSearch.toLowerCase())
+				updateProducts.filter(
+					(product) =>
+						product.productName
+							?.toLowerCase()
+							?.includes(productSearch?.toLowerCase()) ||
+						String(product?.price)?.includes(productSearch)
 				)
 			);
 		}
