@@ -10,8 +10,8 @@ export async function generateMetadata({
 }) {
 	const { data } = await baseFetch(`api/products/${params.productId}`);
 	return {
-		title: data?.productName ?? 'Product',
-		description: data?.description ?? 'Product',
+		title: data?.productName ?? '',
+		description: data?.description ?? data?.productName ?? '',
 		openGraph: {
 			images: data?.productImage ?? '',
 		},
