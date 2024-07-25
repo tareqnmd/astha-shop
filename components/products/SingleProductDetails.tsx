@@ -10,7 +10,7 @@ const SingleProductDetails = ({ product }: { product: ProductType }) => {
 		<div className="flex flex-col gap-2">
 			<ProductInfo product={productData} />
 			<ProductAddToCart
-				extraClass="max-w-[200px] rounded-lg bg-gray-600 text-white"
+				extraClass="max-w-[200px] rounded-lg bg-gray-600 text-white mt-4"
 				product={productData}
 			/>
 		</div>
