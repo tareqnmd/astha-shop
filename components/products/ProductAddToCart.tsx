@@ -25,7 +25,7 @@ const ProductAddToCart = ({
 			className={cn(
 				'bg-secondary p-2 transition-all',
 				availableQuantity > 0
-					? 'hover:bg-black hover:text-white'
+					? 'hover:transition-all hover:bg-black hover:text-white'
 					: 'cursor-not-allowed bg-danger',
 				extraClass
 			)}
