@@ -23,7 +23,7 @@ const ProductAddToCart = ({
 		<button
 			onClick={addToCartHandler}
 			className={cn(
-				'bg-secondary p-2 transition-all',
+				'bg-secondary p-2 transition duration-500',
 				availableQuantity > 0
 					? 'hover:bg-black hover:text-white'
 					: 'cursor-not-allowed bg-danger',
