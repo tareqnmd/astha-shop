@@ -19,7 +19,7 @@ const ProductSearch = () => {
 	return (
 		<input
 			placeholder="Search Product"
-			className="rounded px-2 py-1 border border-textPrimary"
+			className="rounded px-2 py-1 border border-textPrimary text-xs"
 			onChange={searchHandler}
 			type="text"
 		/>
